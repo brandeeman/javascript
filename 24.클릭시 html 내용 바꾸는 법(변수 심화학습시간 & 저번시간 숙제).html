@@ -24,45 +24,35 @@
     ></script>
   </head>
   <body>
-    <!-- 모달 창 -->
-    <div class="black-bg">
-      <div class="white-bg">
-        <h4>로그인하세요</h4>
-
-        <!-- **form 만드는 법 - 디자인 된 폼 붙여 넣음-->
-        <!-- action : action으로 이동 함 -->
-        <form action="17.success.html">
-          <div class="my-3">
-            <input type="text" class="form-control" />
-          </div>
-          <div class="my-3">
-            <input type="password" class="form-control" />
-          </div>
-          <button type="submit" class="btn btn-primary">전송</button>
-          <button type="button" class="btn btn-danger" id="close">닫기</button>
-        </form>
-      </div>
-    </div>
-
     <!-- nav bar -->
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <span class="navbar-brand">Navbar</span>
-        <button class="navbar-toggler" type="button">
+        <span class="navbar-brand">JSShop</span>
+        <!-- **Dark 모드 만드는 법 -->
+        <span class="badge bg-dark">Dark 🔄</span>
+        <class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </nav>
 
-    <button class="btn1">버튼</button>
-
     <script>
-      $(".btn1").on("click", function () {
-        $(".black-bg").addClass("show-modal");
-      });
+      //badge 클릭 횟수가 홀수면 내부 글자를 Light로 변경
+      //badge 클릭 횟수가 짝수면 내부 글자를 dakrk로 변경
 
-      $("#close").on("click", function () {
-        $(".black-bg").removeClass("show-modal");
+      let count = 0;
+
+      $(".badge").on("click", function () {
+        count += 1;
+        console.log(count);
+
+        if (count % 2 == 1) {
+          //badge 클릭 횟수가 홀수면 내부 글자를 Light로 변경
+          $('.badge').html('Light 🔄');
+        } else {
+          //badge 클릭 횟수가 짝수면 내부 글자를 Dark로 변경
+          $('.badge').html('Dark 🔄');
+        }
       });
     </script>
 

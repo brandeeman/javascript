@@ -1,7 +1,7 @@
 /* alert css */
-.alert-box{
+.alert-box {
   /* 안 보임 */
-  display : none;
+  display: none;
   /* 보임 */
   /* display : block; */
 
@@ -11,12 +11,12 @@
   border-radius: 5px;
 }
 
-.list-group{
-  display:none;
+.list-group {
+  display: none;
 }
 
-.show{
-  display:block;
+.show {
+  display: block;
 }
 
 /* 애니메이션 사용법 */
@@ -28,35 +28,66 @@
   /* 모습만 숨김 */
   visibility: hidden;
 
-  position : fixed;
+  position: fixed;
   /* z-index : 창을 순서대로 배치 */
-  z-index : 5;
- 
-  width : 100%;
-  height : 100%;
-  background : rgba(0,0,0,0.5);
-  
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
   padding: 30px;
 
   /* 투명도 */
-  opacity : 0; 
+  opacity: 0;
   /* opacity : 0; 아예 안 보임 */
   /* opacity : 0.5; */
   /* opacity : 1; */
 
   /* 모든 속성이 1초에 걸쳐 변경되어라 */
   transition: all 1s;
-
 }
 
-.show-modal{
+.show-modal {
   /* display: block; */
   visibility: visible;
-  opacity : 1;
+  opacity: 1;
 }
 
 .white-bg {
   background: white;
   border-radius: 5px;
   padding: 30px;
-} 
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+button {
+  width: 100px;
+  height: 100px;
+}
+
+.slide-container {
+  /* vw : 브라우저 폭. 100vw - 꽉참 */
+  width: 300vw;
+
+  /* margin-left와 같은 말 */
+  /* margin-left: -100vw; */
+  /* transform: translateX(100vw); */
+  transition: all 1s;
+}
+
+.slide-box {
+  width: 100vw;
+
+  /* 이미지 가로로 배치 */
+  float: left;
+}
+
+.slide-box img {
+  /* 이미지 꽉 차게 */
+  width: 100%;
+}

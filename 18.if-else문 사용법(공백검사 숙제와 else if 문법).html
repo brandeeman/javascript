@@ -13,10 +13,12 @@
       crossorigin="anonymous"
     />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="css/main.css" />
 
     <title>Hello, world!</title>
 
+    <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -29,16 +31,15 @@
       <div class="white-bg">
         <h4>로그인하세요</h4>
 
-        <!-- **form 만드는 법 - 디자인 된 폼 붙여 넣음-->
-        <!-- action : action으로 이동 함 -->
+        <!-- form 만드는 법 -->
         <form action="17.success.html">
           <div class="my-3">
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" id="id_input1" />
           </div>
           <div class="my-3">
             <input type="password" class="form-control" />
           </div>
-          <button type="submit" class="btn btn-primary">전송</button>
+          <button type="submit" class="btn btn-primary" id="send1">전송</button>
           <button type="button" class="btn btn-danger" id="close">닫기</button>
         </form>
       </div>
@@ -64,6 +65,44 @@
       $("#close").on("click", function () {
         $(".black-bg").removeClass("show-modal");
       });
+    </script>
+
+    <script>
+      // **
+      // 1.전송버튼을 누른다.
+      // 2.input에 입력한 값이 공백이면 알림창을 띄운다.
+      $("#send1").on("click", function () {
+        // input에 입력한 값 출력하는 법
+        let a1 = document.getElementById("id_input1").value;
+
+        if (a1 == "") {
+          alert("아이디 입력 안함");
+        }
+      });
+
+      // click 같은말 tag로
+      // $("form").on("submit", function () {
+      //   console.log("안녕");
+      // });
+
+      // **if 문 만드는 법
+      // if(조건){
+      //   실행할 코드~~~
+      // }else if(조건){
+      // }else{
+      //   실행할 코드~~~
+      // }
+
+      // **비교 연산자1 : ==, <, <=, >, >=
+      // **비교 연산자2 : !=, ===(타입까지 같아야 함)
+      // true 자료들(truthy라고 함) : 0제외 숫자. '문자', [], {}
+      // false 자료들(falsy라고 함) : 0, '', null, undefined, NaN
+      // 연산자3 : &&(둘 다 참이어야 ture 판정), ||(둘 중 하나만 참이면 true 판정)
+
+      // **변수에 1 더하는 법
+      // 변수+++
+      // 변수 += 1
+      // 변수 = 변수 + 1
     </script>
 
     <!-- Optional JavaScript; choose one of the two! -->

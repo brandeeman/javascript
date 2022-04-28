@@ -1,9 +1,3 @@
-<!-- 구글 검색 : jquery cnd -->
-<!-- 버전 : minified -->
-
-<!-- 참고 : jQuery, Javascript 비교 
-: https://webstudynote.tistory.com/95-->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,18 +13,20 @@
       crossorigin="anonymous"
     />
 
+    <!-- css -->
     <link rel="stylesheet" href="css/main.css" />
+
+    <!-- jquery -->
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+      ></script>
 
     <title>Hello, world!</title>
 
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
-    <!-- 모달 창은 여기다 넣는 게 좋음 -->
 
     <!-- nav bar -->
     <nav class="navbar navbar-light bg-light">
@@ -42,34 +38,40 @@
       </div>
     </nav>
 
-    <div class="black-bg">
-      <div class="white-bg">
-        <h4>로그인하세요</h4>
-        <button class="btn btn-danger" id="close">닫기</button>
-      </div>
+    <div class="main-bg">
+      <h4>Shirts on Sale</h4>
+      <button id="login" class="btn btn-danger">로그인</button>
     </div>
 
-    <button class="btn1">버튼</button>
+    <div class="alert alert-danger">
+      <span class="number1">5</span>초 이내 구매시 사은품 증정!
+    </div>
 
-    <!-- 모달 창 만드는 법 : show-class 보였다. 안 보였다. -->
     <script>
-      $(".btn1").on("click", function () {
-        $(".black-bg").addClass("show-modal");
-      });
 
-      $("#close").on("click", function () {
-        $(".black-bg").removeClass("show-modal");
-      });
+      //1초마다 함수를 실행해라. 
+      setInterval(함수1, 1000);
+
+      //5초에 사라지게 해라.
+      setInterval(함수2, 5000);
+
+      // 함수 내용 : 1씩 감소시켜라. 
+      let x = 5;
+
+      function 함수1(){
+        x = x-1;
+        document.querySelector('.number1').innerHTML = x;
+        // $('.number1').innerHTML = x;
+      }
+
+      // 함수 내용 : 5초에 사라지게 해라
+      function 함수2(){
+        $('.alert').hide();
+      }
     </script>
 
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
+
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
